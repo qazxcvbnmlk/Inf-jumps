@@ -1,0 +1,53 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/BatuKvi123/PabloLibV3/main/PabloLibV3"))() local PabloLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/BatuKvi123/PabloLibV3/main/PabloLibV3"))()
+local window = PabloLib:Create("kurdstan")
+
+---Tabs---
+
+local tab1 = window:CreateTab("Admin Commands")
+local tab2 = window:CreateTab("drops")
+local tab3 = window:CreateTab("Daftar")
+---buttons---
+
+tab1:CreateButton("Infinite Yield", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+tab1:CreateTextbox("Speed", function(a)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = a
+print(a)
+end)
+
+tab1:CreateTextbox("Change your Jumppower", function(a)
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = a
+print(a)
+end)
+
+tab2:CreateDropdown("droping", {"flying 1", "unflying 2", "Ak-47 4"}, function(a)
+print(a)
+end) 
+
+---ERROR---
+
+tab3:CreateButton("weeks", function() 
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+tab3:CreateButton("هاكر", function() 
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Remote-Spy-for-Synapse-Z-Wave-Celery-Electron-Solara-17005"))()
+end) 
+
+tab3:CreateButton("كوردي", function()
+loadstring(game:HttpGet("https://rawscripts.net/raw/THE-GAMES-Gym-League-AtherHub-16774"))()
+end) 
+
+tab3:CreateButton("جامد", function() 
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Kurd-hub-16756"))()
+end) 
+
+tab1:CreateButton("health", function() 
+loadstring(game:HttpGet("https://rawscripts.net/raw/Demonfall-gui_501"))()
+end) 
+
+tab2:CreateButton("خؤكوشتن", function() 
+loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Just-a-another-utmm-game-script-14457"))()
+end) 
