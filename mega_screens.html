@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MEGA TSB HUB</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:black;
+  color:white;
+  overflow:hidden;
+}
+
+/* SCREEN BASE */
+.screen{
+  position:fixed;
+  top:0;left:0;
+  width:100%;
+  height:100%;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  transition:1s;
+}
+.show{display:flex; animation:mega 1s;}
+
+@keyframes mega{
+  0%{transform:scale(0) rotate(0deg); opacity:0;}
+  100%{transform:scale(1) rotate(360deg); opacity:1;}
+}
+
+/* BUTTON */
+button{
+  padding:12px 25px;
+  border:none;
+  border-radius:10px;
+  background:#00ffff;
+  color:black;
+  font-size:16px;
+  margin:6px;
+  cursor:pointer;
+}
+
+/* INPUT */
+input{
+  padding:10px;
+  border-radius:8px;
+  border:none;
+  margin:5px;
+  width:220px;
+}
+
+/* TEXT EFFECTS */
+.glow{
+  font-size:35px;
+  color:#00ffff;
+  text-shadow:0 0 10px cyan,0 0 20px cyan,0 0 40px cyan;
+}
+
+.type{
+  font-size:22px;
+  color:#00ff00;
+  text-shadow:0 0 10px green;
+  border-right:3px solid white;
+  padding-right:5px;
+  white-space:nowrap;
+  overflow:hidden;
+}
+
+/* LOADING */
+.loading{
+  font-size:30px;
+}
+
+/* ROBLOX LOGO */
+.logo{
+  width:120px;
+  margin-bottom:20px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- SCREEN 1 LOGIN -->
+<div id="s1" class="screen show">
+<h1>🔐 Login</h1>
+<input id="gmail" placeholder="Gmail">
+<input id="pass" type="password" placeholder="Password">
+<button onclick="login()">Login</button>
+
+<p>Hello this script for roblox game TSB have more tabs and menu have inf dash and no slower no ragdoll and more it's nicer script coming soon updating script</p>
+</div>
+
+<!-- LOADING SCREEN -->
+<div id="loading" class="screen">
+<div class="loading">⚡ Loading Script...</div>
+</div>
+
+<!-- SCREEN 2 SCRIPT PAGE -->
+<div id="s2" class="screen">
+<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Roblox_Logo_2022.jpg">
+<h2>Roblox Script</h2>
+
+<textarea style="width:85%;height:80px;background:black;color:#0f0;">
+loadstring(game:HttpGet("https://raw.githubusercontent.com/xVicity/GLACIER/main/LATEST.lua"))();
+</textarea>
+
+<button onclick="toScreen3()">Click Me</button>
+</div>
+
+<!-- SCREEN 3 HACKER TYPE -->
+<div id="s3" class="screen">
+<div id="typeText" class="type"></div>
+<button onclick="toScreen4()">Next</button>
+</div>
+
+<!-- SCREEN 4 PASSWORD LOCK -->
+<div id="s4" class="screen">
+<h2>Password Locked Script</h2>
+<input id="lockPass" type="password" placeholder="Password">
+<button onclick="unlock()">Unlock</button>
+<button onclick="window.open('https://discord.gg/')">Discord</button>
+<button onclick="toScreen5()">Admin Login</button>
+</div>
+
+<!-- SCREEN 5 ADMIN LOGIN -->
+<div id="s5" class="screen">
+<h2>👑 Admin Login</h2>
+<input id="adminMail" placeholder="Admin Gmail">
+<input id="adminPass" type="password" placeholder="Admin Password">
+<button onclick="adminLogin()">Login Admin</button>
+</div>
+
+<!-- SCREEN 6 ADMIN PANEL -->
+<div id="s6" class="screen">
+<h1 class="glow">🔥 ADMIN PANEL 🔥</h1>
+<button onclick="alert('BAN ALL (FAKE)')">Ban All</button>
+<button onclick="alert('UNBAN ALL (FAKE)')">Unban All</button>
+<button onclick="alert('KICK ALL (FAKE)')">Kick All</button>
+<button onclick="alert('SCRIPT HIDDEN')">Hide Script</button>
+<button onclick="alert('SCRIPT SHOWN')">Show Script</button>
+</div>
+
+<script>
+/* TELEPORT EFFECT */
+function teleport(from,to){
+  document.getElementById(from).classList.remove("show");
+  setTimeout(()=>{
+    document.getElementById(from).style.display="none";
+    document.getElementById(to).style.display="flex";
+    document.getElementById(to).classList.add("show");
+  },500);
+}
+
+/* LOGIN SCREEN 1 */
+function login(){
+  let g=document.getElementById("gmail").value;
+  let p=document.getElementById("pass").value;
+
+  if(g=="kurd" && (p=="kurd" || p=="hacker")){
+    teleport("s1","loading");
+    setTimeout(()=>teleport("loading","s2"),2000);
+  } else {
+    alert("Wrong Gmail or Password");
+  }
+}
+
+/* TYPEWRITER */
+let text="WELCOME HACKER MODE ACTIVATED...";
+let i=0;
+function typeWriter(){
+  if(i<text.length){
+    document.getElementById("typeText").innerHTML+=text.charAt(i);
+    i++;
+    setTimeout(typeWriter,80);
+  }
+}
+function toScreen3(){
+  teleport("s2","s3");
+  i=0;
+  document.getElementById("typeText").innerHTML="";
+  setTimeout(typeWriter,500);
+}
+
+/* PASSWORD LOCK */
+function toScreen4(){
+  teleport("s3","s4");
+}
+function unlock(){
+  if(document.getElementById("lockPass").value=="1234"){
+    alert("Unlocked!");
+  } else {
+    alert("Wrong Password");
+  }
+}
+
+/* ADMIN LOGIN */
+function toScreen5(){
+  teleport("s4","s5");
+}
+function adminLogin(){
+  let g=document.getElementById("adminMail").value;
+  let p=document.getElementById("adminPass").value;
+
+  if(g=="admin" && p=="admin"){
+    teleport("s5","s6");
+  } else {
+    alert("Not Admin");
+  }
+}
+</script>
+
+</body>
+</html>
